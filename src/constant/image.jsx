@@ -19,7 +19,8 @@ export default {
     shopy5: require("../assets/images/shopy4.webp"),
     shopy6: require("../assets/images/shopy3.webp"),
     shopy7: require("../assets/images/shopi2.webp"),
-    shopy8: require("../assets/images/item-03.jpg")
+    shopy8: require("../assets/images/item-03.jpg"),
+    shopy9 :require("../assets/images/banner-08.jpg")
 
 
 
