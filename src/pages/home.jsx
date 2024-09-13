@@ -3,10 +3,12 @@ import Slider from "react-slick";
 import { Images } from '../constant';
 import { GrFormPrevious } from 'react-icons/gr';
 import { MdOutlineNavigateNext } from 'react-icons/md';
+import data from '../context/json/data.json'
 
 const Home = () => {
-  const sliderRef = React.useRef(null);
-
+ 
+  const sliderRef1 = React.useRef(null); 
+    const sliderRef2 = React.useRef(null);
   const settings = {
     dots: true,
     infinite: true,
@@ -16,19 +18,20 @@ const Home = () => {
     arrows: false, 
   };
 
-  const handleNext = () => {
+  const handleNext = (sliderRef) => {
     sliderRef.current.slickNext();
   };
 
-  const handlePrev = () => {
+  const handlePrev = (sliderRef) => {
     sliderRef.current.slickPrev();
   };
+  
 
   return (
     <>
   <section>
     <div className="relative w-full">
-      <Slider ref={sliderRef} className="overflow-hidden " {...settings}>
+      <Slider ref={sliderRef1} className="overflow-hidden " {...settings}>
         {/* Slide 1 */}
         <div className="relative w-full h-[80vh]">
           <img 
@@ -80,13 +83,13 @@ const Home = () => {
 
        {/* Next  Prev buttons  */}
       <button 
-        onClick={handlePrev} 
+     onClick={() => handlePrev(sliderRef1)}
         className="absolute left-5 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full hover:bg-opacity-75 hover:bg-red-500"
       >
         <GrFormPrevious/>
       </button>
       <button 
-        onClick={handleNext} 
+        onClick={() => handleNext(sliderRef1)}
         className="absolute right-5 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full hover:bg-opacity-75 hover:bg-red-500"
       >
         <MdOutlineNavigateNext />
@@ -128,7 +131,69 @@ const Home = () => {
   
   </div>
 </section>
+ <section>
+ <h2 className="text-2xl text-center mt-3 md:text-3xl font-bold mb-16">
+      FEATURED PRODUCTS
+      </h2>
+ <div className="relative w-full mb-5">
+                <Slider ref={sliderRef2} className="overflow-hidden " {...settings}>
+                    {/* Slide 1 - Produits */}
+                    <div className="relative flex w-[100vw] h-[80vh] items-center   ">
+                        <div className='flex  w-[100%] items-center justify-center gap-5'>
+                            {data.slice(0, 4).map((item) => (
+                                <div key={item.id} className="text-start  flex flex-col  ">
+                                    <div className="relative group">
+                                        <img src={Images[item.affiche]} alt={item.title} className="w-[21vw]" />
+                                        <div className="absolute inset-0 bg-black opacity-5 group-hover:opacity-50 transition-opacity duration-600"></div>
+                                        <button
+                                            className="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-black text-white px-1 py-2
+                                             rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-600 text-lg hover:bg-red-500 ">
+                                            ADD TO CART
+                                        </button>
+                                    </div>
+                                    <p className="text-black pt-6 text-lg opacity-70">{item.title}</p>
+                                    <p className="text-black text-lg opacity-70 ">{item.price}</p>
+                                    
+                                </div>
+                            ))}
+                        </div>
+                    </div>
 
+                    {/* Slide 2 - Produits */}
+                    <div className="relative w-full h-[80vh] items-center ">
+                        <div className='flex  w-[100%] items-center justify-center gap-5'>
+                            {data.slice(4,8).map((item) => (
+                                <div key={item.id} className="text-start  flex flex-col ">
+                                   <div className="relative group">
+                                        <img src={Images[item.affiche]} alt={item.title} className="w-[21vw]" />
+                                        <div className="absolute inset-0 bg-black opacity-5 group-hover:opacity-50 transition-opacity duration-600"></div>
+                                        <button
+                                            className="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-neutral-900 text-white px-1 py-2
+                                             rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-600 text-lg hover:bg-red-500 ">
+                                            ADD TO CART
+                                        </button>
+                                    </div>
+                                    <p className="text-black pt-6 text-lg opacity-70">{item.title}</p>
+                                    <p className="text-black text-lg opacity-70">{item.price}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </Slider>
+
+       {/* Next  Prev buttons  */}
+      <button 
+        onClick={() => handlePrev(sliderRef2)} 
+        className="absolute left-5 top-1/2 transform -translate-y-1/2 text-black opacity-55 text-3xl ">
+        <GrFormPrevious/>
+      </button>
+      <button 
+       onClick={() => handleNext(sliderRef2)} 
+        className="absolute right-5 top-1/2 transform -translate-y-1/2 text-black opacity-55 text-3xl  ">
+        <MdOutlineNavigateNext />
+      </button>
+    </div>
+ </section>
     <section>
     <h2 className="text-2xl md:text-3xl font-bold m-10 text-center">
      OUR BLOG
@@ -137,7 +202,7 @@ const Home = () => {
   
   <div class="group cursor overflow-hidden w-[28vw] h-[70vh]  ">
     <div >
-      <img src={Images.cartable} className='transform transition-transform duration-300 hover:scale-110 w-full h-[40vh] mb-3' />
+      <img src={Images.cartable} className='transform transition-transform duration-300 hover:scale-110 w-full h-[40vh] mb-3 overflow-hidden' />
     </div>
     <div class="flex-1 overflow-hidden bg-white ">
       <h1 className=' font-semibold hover:text-[#e65540] mb-3'>Black Friday Guide: Best Sales & Discount Codes</h1>
@@ -148,7 +213,7 @@ const Home = () => {
     </div>
     <div class="group cursor overflow-hidden w-[28vw] h-[70vh]  ">
     <div >
-      <img src={Images.fillete} className='transform transition-transform duration-300 hover:scale-110 w-full h-[40vh] mb-3' />
+      <img src={Images.fillete} className='transform transition-transform duration-300 hover:scale-110 w-full h-[40vh] mb-3 overflow-hidden' />
     </div>
     <div class="flex-1 overflow-hidden bg-white ">
       <h1 className='font-semibold hover:text-[#e65540] mb-3'>The White Sneakers Nearly Every Fashion Girls Own</h1>
@@ -159,7 +224,7 @@ const Home = () => {
     </div>
     <div class="group cursor overflow-hidden w-[28vw]  h-[70vh] ">
     <div >
-      <img src={Images.carousel1} className='transform transition-transform duration-300 hover:scale-110 w-full h-[40vh] mb-3' />
+      <img src={Images.carousel1} className='transform transition-transform duration-300 hover:scale-110 w-full h-[40vh] mb-3 overflow-hidden' />
     </div>
     <div class="flex-1 overflow-hidden bg-white ">
       <h1 className='font-semibold  hover:text-[#e65540] mb-3'>New York SS 2018 Street Style: By Annina Mislin</h1>
