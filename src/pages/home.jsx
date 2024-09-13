@@ -25,7 +25,9 @@ const Home = () => {
   const handlePrev = (sliderRef) => {
     sliderRef.current.slickPrev();
   };
-  
+  // random product
+  const randomItemsIndex = Math.floor(Math.random() * Images.length);
+  const randomItems = Images[randomItemsIndex];
 
   return (
     <>
@@ -193,6 +195,30 @@ const Home = () => {
         <MdOutlineNavigateNext />
       </button>
     </div>
+ </section>
+ <section>
+  <div>
+
+  </div>
+  <div className='w-[46%] bg-white overflow-hidden flex flex-col justify-center items-center'>
+  {randomItems && (
+    <>
+     <img src={Images[randomItems?.affiche]} alt="" className='w-[40%] h-[250px] object-cover transition-all duration-300 ease-in-out hover:scale-110' />
+      <div className='text-center flex flex-col justify-center items-center pt-4'>
+        <p className='text-[#555] pb-2 text-[18px]'>{randomItems.title}</p>
+        <p className='text-[#555] pb-2 text-[18px]'>${randomItems.price}</p>
+        <div className='flex gap-4 pb-4 px-10'>
+          <div className='flex flex-col justify-center items-center border-[1px] border-gray-400 p-2'>
+            <p className='text-[#555] text-[18px]'>-2082</p>
+            <p className='text-[#999]'>days</p>
+          </div>
+          
+        </div>
+      </div>
+    </>
+  )}
+</div>
+
  </section>
     <section>
     <h2 className="text-2xl md:text-3xl font-bold m-10 text-center">
