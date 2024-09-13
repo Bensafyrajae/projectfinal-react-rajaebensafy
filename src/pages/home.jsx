@@ -4,9 +4,11 @@ import { Images } from '../constant';
 import { GrFormPrevious } from 'react-icons/gr';
 import { MdOutlineNavigateNext } from 'react-icons/md';
 import data from '../json/data.json'
+import { useNavigate } from 'react-router-dom';
+import { blog } from '../constant/data';
 
 const Home = () => {
- 
+ const goto = useNavigate()
   const sliderRef1 = React.useRef(null); 
     const sliderRef2 = React.useRef(null);
   const settings = {
@@ -153,7 +155,7 @@ const Home = () => {
                                             ADD TO CART
                                         </button>
                                     </div>
-                                    <p className="text-black pt-6 text-lg opacity-70">{item.title}</p>
+                                    <p className="text-black pt-6 text-lg opacity-70"  onClick={() =>goto(`/detShop/${item.id}`)}>{item.title}</p>
                                     <p className="text-black text-lg opacity-70 ">{item.price}</p>
                                     
                                 </div>
@@ -175,7 +177,7 @@ const Home = () => {
                                             ADD TO CART
                                         </button>
                                     </div>
-                                    <p className="text-black pt-6 text-lg opacity-70">{item.title}</p>
+                                    <p className="text-black pt-6 text-lg opacity-70" onClick={() =>goto(`/detShop/${item.id}`)}>{item.title}</p>
                                     <p className="text-black text-lg opacity-70">{item.price}</p>
                                 </div>
                             ))}
@@ -231,40 +233,20 @@ const Home = () => {
      OUR BLOG
       </h2>
   <div class="mx-8 my-10 gap-7 grid max-w-screen-xl gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+  {blog.map((item) => (
+  <div class="group cursor  w-[28vw] h-[70vh]  ">
+    <div className='overflow-hidden' >
+      <img src={Images[item.pic]} className='transform transition-transform duration-300 hover:scale-110 w-full h-[40vh] mb-3 overflow-hidden' />
+    </div>
+    <div class="flex-1 overflow-hidden bg-white ">
+      <h1 className=' font-semibold hover:text-[#e65540] mb-3'>{item.title}</h1>
+      <p class=" text-gray-600 mb-3">{item.by}</p>
+      <p class=" text-gray-600">{item.description}</p>
+     
+      </div>
+    </div>
+  ))}
   
-  <div class="group cursor overflow-hidden w-[28vw] h-[70vh]  ">
-    <div >
-      <img src={Images.cartable} className='transform transition-transform duration-300 hover:scale-110 w-full h-[40vh] mb-3 overflow-hidden' />
-    </div>
-    <div class="flex-1 overflow-hidden bg-white ">
-      <h1 className=' font-semibold hover:text-[#e65540] mb-3'>Black Friday Guide: Best Sales & Discount Codes</h1>
-      <p class=" text-gray-600 mb-3">by fashe-theme Admin on Dec 28,2017</p>
-      <p class=" text-gray-600">Cras ultricies ligula sed magna dictum porta. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
-     
-      </div>
-    </div>
-    <div class="group cursor overflow-hidden w-[28vw] h-[70vh]  ">
-    <div >
-      <img src={Images.fillete} className='transform transition-transform duration-300 hover:scale-110 w-full h-[40vh] mb-3 overflow-hidden' />
-    </div>
-    <div class="flex-1 overflow-hidden bg-white ">
-      <h1 className='font-semibold hover:text-[#e65540] mb-3'>The White Sneakers Nearly Every Fashion Girls Own</h1>
-      <p class=" text-gray-600 mb-3">by fashe-theme Admin on Dec 28,2017</p>
-      <p class=" text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
-     
-      </div>
-    </div>
-    <div class="group cursor overflow-hidden w-[28vw]  h-[70vh] ">
-    <div >
-      <img src={Images.carousel1} className='transform transition-transform duration-300 hover:scale-110 w-full h-[40vh] mb-3 overflow-hidden' />
-    </div>
-    <div class="flex-1 overflow-hidden bg-white ">
-      <h1 className='font-semibold  hover:text-[#e65540] mb-3'>New York SS 2018 Street Style: By Annina Mislin</h1>
-      <p class=" text-gray-600 mb-3">by fashe-theme Admin on Dec 28,2017</p>
-      <p class=" text-gray-600">Cras ultricies ligula sed magna dictum porta. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
-     
-      </div>
-    </div>
   </div>
   </section>
   

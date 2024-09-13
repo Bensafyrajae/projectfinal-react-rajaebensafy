@@ -4,7 +4,17 @@ import { Images } from '../constant';
 const About = () => {
     return (
       <div >
-     
+        <div className="relative w-full h-[30vh]">
+          <img 
+            className="w-full h-full object-cover"
+            src={Images.carousel3}
+            alt="contact"
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-10">
+            <h3 className="text-5xl text-white">About</h3>
+
+          </div>
+        </div>
       
       <div className='flex pt-14 w-full  justify-center  py-10 gap-x-10'>
           <div className='w-[25vw] h-[60vh] overflow-hidden '>

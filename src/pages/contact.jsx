@@ -23,10 +23,10 @@ const Contact = () => {
         <div className='flex flex-col w-[50vw] h-full'>
           <p>The email is invalid</p>
           <h3>Send us your message</h3>
-          <input type="nom" className=" border-slate-500  mb-2 block h-14 w-full  m-2" placeholder="nom" />
-          <input type="email" className=" border-slate-400 mb-2 block h-14 w-full m-2  " placeholder=" email" />
-          <input type="phone" className=" border-slate-400 mb-2 block h-14 w-full m-2 " placeholder="phone" />
-          <textarea placeholder="message"></textarea>
+          <input type="nom" className=" border   mb-2 block h-14 w-full  m-2" placeholder="nom" />
+          <input type="email" className=" border mb-2 block h-14 w-full m-2  " placeholder=" email" />
+          <input type="phone" className=" border mb-2 block h-14 w-full m-2 " placeholder="phone" />
+          <textarea className=" border mb-2 block h-24 w-full m-2 "  placeholder="message"></textarea>
           <button class="block w-40 rounded-3xl m-2 bg-black px-14 py-4 font-medium text-white">Send</button>
 
         </div>
