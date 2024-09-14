@@ -5,8 +5,8 @@
         "description":"",
         "price":"$20.00",
         "title":"Boxy3 T-Shirt with Roll Sleeve",
-        "color":"",
-        "type":"",
+        "color":"Red",
+        "type":"New",
         "quantity":""
     },
     {
@@ -15,8 +15,8 @@
         "description":"",
         "price":"$20.00",
         "title":"Boxy2 T-Shirt with Roll Sleeve",
-        "color":"",
-        "type":"",
+        "color":"Black",
+        "type":"InStock",
         "quantity":""
     },
     {
@@ -25,8 +25,8 @@
         "description":"",
         "price":"$20.00",
         "title":"Boxy2 T-Shirt with Roll Sleeve",
-        "color":"",
-        "type":"",
+        "color":"Gray",
+        "type":"InStock",
         "quantity":""
     },
     {
@@ -35,8 +35,8 @@
         "description":"",
         "price":"$20.00",
         "title":"Boxy2 T-Shirt with Roll Sleeve",
-        "color":"",
-        "type":"",
+        "color":"Black",
+        "type":"Sale",
         "quantity":""
     },
     {
@@ -45,8 +45,8 @@
         "description":"",
         "price":"$20.00",
         "title":"Boxy2 T-Shirt with Roll Sleeve",
-        "color":"",
-        "type":"",
+        "color":"Red",
+        "type":"Sale",
         "quantity":""
     },{
         "id":"6",
@@ -54,8 +54,8 @@
         "description":"",
         "price":"$20.00",
         "title":"Boxy2 T-Shirt with Roll Sleeve",
-        "color":"",
-        "type":"",
+        "color":"Black",
+        "type":"New",
         "quantity":""
     },{
         "id":"7",
@@ -63,8 +63,8 @@
         "description":"",
         "price":"$20.00",
         "title":"Boxy2 T-Shirt with Roll Sleeve",
-        "color":"",
-        "type":"",
+        "color":"Gray",
+        "type":"Sale",
         "quantity":""
     },{
         "id":"8",
@@ -72,8 +72,8 @@
         "description":"",
         "price":"$20.00",
         "title":"Boxy2 T-Shirt with Roll Sleeve",
-        "color":"",
-        "type":"",
+        "color":"Gray",
+        "type":"Sale",
         "quantity":""
     }
     

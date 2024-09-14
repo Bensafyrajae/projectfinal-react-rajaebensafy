@@ -37,7 +37,7 @@ const Home = () => {
     <div className="relative w-full">
       <Slider ref={sliderRef1} className="overflow-hidden " {...settings}>
         {/* Slide 1 */}
-        <div className="relative w-full h-[80vh]">
+        <div className="relative w-full h-[80vh] ">
           <img 
             className="w-full h-full object-cover"
             src={Images.carousel1}
@@ -239,7 +239,7 @@ const Home = () => {
       <img src={Images[item.pic]} className='transform transition-transform duration-300 hover:scale-110 w-full h-[40vh] mb-3 overflow-hidden' />
     </div>
     <div class="flex-1 overflow-hidden bg-white ">
-      <h1 className=' font-semibold hover:text-[#e65540] mb-3'>{item.title}</h1>
+      <h1 className=' font-semibold hover:text-[#e65540] mb-3' >{item.title}</h1>
       <p class=" text-gray-600 mb-3">{item.by}</p>
       <p class=" text-gray-600">{item.description}</p>
      
