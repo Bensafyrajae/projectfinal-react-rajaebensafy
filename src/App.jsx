@@ -12,6 +12,7 @@ import DetShop from "./pages/detailsarticle";
 import { MyProvider } from "./context";
 import Register from "./pages/register";
 import ShopPage from "./pages/shop";
+import Cart from "./pages/cart";
 function App() {
   return (
     <>
@@ -26,7 +27,8 @@ function App() {
         <Route path="/shopPage" element={<ShopPage />} />    
         <Route path="/register" element={<Register />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/detShop/:id" element={<DetShop />} />
+     
+
       </Routes>
       <Footer/>
       </MyProvider>
